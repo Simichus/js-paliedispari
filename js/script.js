@@ -107,4 +107,5 @@ playEvenOddElement.addEventListener('click', function () {
 playAgainElement.addEventListener('click', function () {
     resetHTML(sumResultElement);
     resetHTML(evenOddResultElement);
+    numberElement.value = '';
 })
