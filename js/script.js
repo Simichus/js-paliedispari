@@ -55,6 +55,8 @@ var evenOddSelectionElement = document.getElementById('even-odd');
 var numberElement = document.getElementById('number');
 var playEvenOddElement = document.getElementById('play-even-odd');
 var playAgainElement = document.getElementById('play-again');
+var sumResultElement = document.getElementById('sum-result');
+var evenOddResultElement = document.getElementById('even-odd-result');
 
 // cpu randomizer
 function cpuRandomNum() {
@@ -76,12 +78,11 @@ function isSumEven(sum) {
     }
 }
 
+// start game button event
 playEvenOddElement.addEventListener('click', function () {
     var userSelection = parseInt(numberElement.value);
     var cpuNum = cpuRandomNum();
     var numbersSum = sum(userSelection, cpuNum);
-    var sumResultElement = document.getElementById('sum-result');
-    var evenOddResultElement = document.getElementById('even-odd-result');
     var sumTypeMessage = 'La somma è: ';
     var gameResultMessage = 'HAI VINTO!!';
 
@@ -99,4 +100,11 @@ playEvenOddElement.addEventListener('click', function () {
 
     sumResultElement.innerHTML = sumTypeMessage;
     evenOddResultElement.innerHTML = gameResultMessage;
+})
+
+// play again event
+
+playAgainElement.addEventListener('click', function () {
+    resetHTML(sumResultElement);
+    resetHTML(evenOddResultElement);
 })
